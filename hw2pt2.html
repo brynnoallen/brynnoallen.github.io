@@ -4,21 +4,32 @@
         <meta charset="utf-8">
         <meta name="description" content="This page contains homework assignments for San Mateo College JavaScript class">
         <title>Homework 2 Part 2</title>
-        <!----- <style>
-
-            body {
+        <style>
+        body {
             font-family: courier;
             background:lightgrey;
             }
 
-            p {
-            background:grey;
-            color:white;
+            .task {
+            background:white;
             text-align:center;
-            width:200px;
-            height:50px;
+            width:100px;
+            height:25px;
             margin:auto;
             }
+            
+            ul {
+			list-style-type:none; 
+			margin:auto;
+            text-align: center;
+			}
+
+			li {
+            display:inline;
+			margin: 5px;
+			padding: 5px;
+			}
+
             a:link, a:visited {
             background:black;
             color:white;
@@ -39,8 +50,13 @@
             .home {
             position:sticky;
             }
+            
+            .form {
+                margin:auto;
+            text-align: center;
 
-        </style> --->
+            }
+        </style>
         <script>
            function process()
            {
@@ -77,25 +93,23 @@
         <h1>Homework 2 Part 2</h1>
 
 
-
-        <div class:"home">
-        <a href="CIS114HomeworkHome.html">Home</a>
-        </div>
-        <div>
-        <a href="hw2.html">Homework 2</a>
-        </div>
-        <a href="hw2pt1.html">Homework 2 Part 1</a>
-        </div>
+        <ul>
+            <li><a href="CIS114HomeworkHome.html">Home</a></li>
+            <li><a href="hw2.html">Homework 2</a></li>
+            <li><a href="hw2pt2.html">Homework 2 Part 2</a></li>
+        </ul>
         
-        <form name="myform">
+        <br>
+        
+        <form name="myform" class="form">
             <label for="number1">Number 1</label><br>
             <input type="number" name="number1" id="number1"><br>
             <label for="number2">Number 2</label><br>
             <input type="number" name="number2" id="number2"><br>
             <label for="number3">Number 3</label><br>
             <input type="number" name="number3" id="number3"><br>
-            <br><input type="button" onclick="process()" value="SUBMIT"><br>
-            <br><label for="results">Results</label>
+            <br><input type="button" onclick="process()" value="CALCULATE"><br>
+            <br><label for="results">Let's do some math!</label>
             <br><textarea name="results" id="results" rows="6" cols="50" ></textarea>
             <br><input type="reset" value="RESET">
         </form>
