@@ -67,7 +67,7 @@
         <script>
            function process()
            {
-               var num1, num2, num3, n1, n2, n3, sum, average, product, min, results, x;
+               var num1, num2, num3, n1, n2, n3, sum, average, product, min, results;
 
                num1= document.forms["myform"].elements["number1"].value;
                num2= document.forms["myform"].elements["number2"].value;
@@ -77,9 +77,16 @@
                n2=parseInt(num2);
                n3=parseInt(num3);
 
+               if (isNaN(n1) || isNaN(n2) || isNaN(n3))
+                {alert("One of your inputs is not a number. Please reset and try again") }
+                else
+                {
+
                sum= n1+n2+n3;
                average= sum/3;
                product= n1*n2*n3;
+
+               
 
                document.getElementById("minis").innerHTML = ("The smallest number you typed was")
 
@@ -94,17 +101,10 @@
                document.getElementById("results").innerHTML = ("The sum of the numbers is "+sum+
                ". <br>The average of the numbers is "+average+". <br>The product of the numbers is "+product);
 
-               if (n1!=Number||n2!=Number||n3!=Number)
-               alert("One of your inputs is not a number. Please reset and try again")
-              x=true
+                }
 
-              if (x=true)
-              document.getElementById("task").innerHTML = ("Please reset and try again.")
-
-
-
-
-               }
+            
+            }
 
         </script>
     </head>
@@ -137,7 +137,7 @@
             <br><input type="reset" value="RESET">
         </form>
         <br>
-        <div id="task" class="task">
+        <div class="task">
             <span id="results"></span>
             <br>
            <span id="minis"></span>
@@ -146,7 +146,7 @@
             <span id="maxis"></span>
             <span id="max"></span>
             <!---I had a good deal of trouble getting the min and max to display with text, so I had the intro text dispay seperately. 
-             I don't think this was the most elegant solution, but I hd trouble finding another.  I would love input on how to do this
+             I don't think this was the most elegant solution, but I had trouble finding another.  I would love input on how to do this
             more efficiently in the future--->
         </div>
         <footer>
