@@ -67,7 +67,7 @@
         <script>
            function process()
            {
-               var num1, num2, num3, n1, n2, n3, sum, average, product, min, results;
+               var num1, num2, num3, n1, n2, n3, sum, average, product, min, results, x;
 
                num1= document.forms["myform"].elements["number1"].value;
                num2= document.forms["myform"].elements["number2"].value;
@@ -94,6 +94,15 @@
                document.getElementById("results").innerHTML = ("The sum of the numbers is "+sum+
                ". <br>The average of the numbers is "+average+". <br>The product of the numbers is "+product);
 
+               if (n1!=Number||n2!=Number||n3!=Number)
+               alert("One of your inputs is not a number. Please reset and try again")
+              x=true
+
+              if (x=true)
+              document.getElementById("task").innerHTML = ("Please reset and try again.")
+
+
+
 
                }
 
@@ -117,18 +126,18 @@
         
         <form name="myform" class="form">
             <label for="number1">Number 1</label><br>
-            <input type="number" name="number1" id="number1"><br>
+            <input type="text" name="number1" id="number1"><br>
             <label for="number2">Number 2</label><br>
-            <input type="number" name="number2" id="number2"><br>
+            <input type="text" name="number2" id="number2"><br>
             <label for="number3">Number 3</label><br>
-            <input type="number" name="number3" id="number3"><br>
+            <input type="text" name="number3" id="number3"><br>
             <br><input type="button" onclick="process()" value="CALCULATE"><br>
             <!---<br><label for="results">Results</label>
             <br><textarea name="results" id="results" rows="6" cols="50" ></textarea>--->
             <br><input type="reset" value="RESET">
         </form>
         <br>
-        <div class="task">
+        <div id="task" class="task">
             <span id="results"></span>
             <br>
            <span id="minis"></span>
