@@ -53,14 +53,21 @@
             
             .form {
                 margin:auto;
-            text-align: center;
+            text-align: center; }
+
+            .task {
+            background:white;
+            text-align:center;
+            width:500px;
+            height:300px;
+            margin:auto;
 
             }
         </style>
         <script>
            function process()
            {
-               var num1, num2, num3, n1, n2, n3, sum, average, product, results;
+               var num1, num2, num3, n1, n2, n3, sum, average, product, min, results;
 
                num1= document.forms["myform"].elements["number1"].value;
                num2= document.forms["myform"].elements["number2"].value;
@@ -74,11 +81,18 @@
                average= sum/3;
                product= n1*n2*n3;
 
-               results= ("The sum of the numbers is "+sum+". \nThe average of the numbers is "+average+". \nThe product of the numbers is "+product);
-              
+               document.getElementById("minis").innerHTML = ("The smallest number you typed was")
 
+               document.getElementById("min").innerHTML = 
+               Math.min(n1, n2, n3);
+               
+               document.getElementById("maxis").innerHTML = ("The largest number you typed was")
 
-               document.getElementById("results").textContent = results ;
+               document.getElementById("max").innerHTML = 
+               Math.max(n1, n2, n3);
+
+               document.getElementById("results").innerHTML = ("The sum of the numbers is "+sum+
+               ". <br>The average of the numbers is "+average+". <br>The product of the numbers is "+product);
 
 
                }
@@ -109,11 +123,23 @@
             <label for="number3">Number 3</label><br>
             <input type="number" name="number3" id="number3"><br>
             <br><input type="button" onclick="process()" value="CALCULATE"><br>
-            <br><label for="results">Let's do some math!</label>
-            <br><textarea name="results" id="results" rows="6" cols="50" ></textarea>
+            <!---<br><label for="results">Results</label>
+            <br><textarea name="results" id="results" rows="6" cols="50" ></textarea>--->
             <br><input type="reset" value="RESET">
         </form>
-
+        <br>
+        <div class="task">
+            <span id="results"></span>
+            <br>
+           <span id="minis"></span>
+           <span id="min"></span>
+           <br>
+            <span id="maxis"></span>
+            <span id="max"></span>
+            <!---I had a good deal of trouble getting the min and max to display with text, so I had the intro text dispay seperately. 
+             I don't think this was the most elegant solution, but I hd trouble finding another.  I would love input on how to do this
+            more efficiently in the future--->
+        </div>
         <footer>
         </footer>
     </body>
