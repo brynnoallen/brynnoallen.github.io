@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="This page contains homework assignments for San Mateo College JavaScript class">
+        <title>Homework 3 Part 3</title>
+        <style>
+            body {
+                font-family: courier;
+                background:lightgrey;
+                }
+    
+                .task {
+                background:white;
+                text-align:center;
+                width:100px;
+                height:25px;
+                margin:auto;
+                }
+                
+                ul {
+                list-style-type:none; 
+                margin:auto;
+                text-align: center;
+                }
+    
+                li {
+                display:inline;
+                margin: 5px;
+                padding: 5px;
+                }
+    
+                a:link, a:visited {
+                background:black;
+                color:white;
+                margin: auto;
+                padding: 5px;
+                }
+                a:hover, a:active {
+                background:green;
+                color:white;
+                margin: auto;
+                padding: 5px;
+                }
+                h1 {
+                color:green !important;
+                text-align:center;
+                }
+                h2 {
+                text-align:center;
+                }
+    
+                .home {
+                position:sticky;
+                }
+                
+                .form {
+                    margin:auto;
+                text-align: center; }
+    
+                .result {
+                background:white;
+                text-align:center;
+                width:700px;
+                height:200px;
+                margin:auto;
+                
+                }
+            </style>
+        <script>
+            /*C = 5/9 * (F - 32) 
+            F = (9/5 * C) + 32*/
+            var input, C, F
+
+            function toC() {
+                var input= document.forms["myform"].elements["input"].value;
+                F=input;
+                C =parseInt(5/9*(F-32));
+                document.getElementById("output").value = (+F+"F is equal to "+C+"C.")
+            }
+
+            function toF() {
+                var input= document.forms["myform"].elements["input"].value;
+                C=input;
+                F=parseInt((9/5 *C)+32);
+                document.getElementById("output").value = (+C+"C is equal to "+F+"F.")
+            }
+            
+ 
+        </script>
+
+    </head>
+
+    <body>
+        <h1>Homework 3 Part 3</h1>
+
+        <ul>
+            <li><a href="CIS114HomeworkHome.html">Home</a></li>
+            <li><a href="hw3.html">Homework 3</a></li>
+            <li><a href="hw3pt1.html">Homework 3 Part 1</a></li>
+            <li><a href="hw3pt2.html">Homework 3 Part 3</a></li>
+        </ul>
+
+        <h2>Tempurature Conversion</h2>
+
+        <form name="myform" class="form">
+            <label for="input">Input Tempurature</label><br>
+            <input type="number" name="input" id="input"><br>
+            <label for="output">Converted Tempurature</label><br>
+            <input type="text" name="output" id="output" readonly><br>
+
+            <br><input type="button" onclick="toC()" value="Convert to Celsius"><br>
+            <br><input type="button" onclick="toF()" value="Convert to Farenheit"><br>
+            <br><input type="reset" value="RESET">
+        </form>
+
+    </body>
+</html>
+

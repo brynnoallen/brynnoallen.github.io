@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="This page contains homework assignments for San Mateo College JavaScript class">
+        <title>Homework 3 Part 2</title>
+        <style>
+            body {
+                font-family: courier;
+                background:lightgrey;
+                }
+    
+                .task {
+                background:white;
+                text-align:center;
+                width:100px;
+                height:25px;
+                margin:auto;
+                }
+                
+                ul {
+                list-style-type:none; 
+                margin:auto;
+                text-align: center;
+                }
+    
+                li {
+                display:inline;
+                margin: 5px;
+                padding: 5px;
+                }
+    
+                a:link, a:visited {
+                background:black;
+                color:white;
+                margin: auto;
+                padding: 5px;
+                }
+                a:hover, a:active {
+                background:green;
+                color:white;
+                margin: auto;
+                padding: 5px;
+                }
+                h1 {
+                color:green !important;
+                text-align:center;
+                }
+                h2 {
+                text-align:center;
+                }
+    
+                .home {
+                position:sticky;
+                }
+                
+                .form {
+                    margin:auto;
+                text-align: center; }
+    
+                .result {
+                background:white;
+                text-align:center;
+                width:700px;
+                height:200px;
+                margin:auto;
+                
+                }
+            </style>
+
+        <script>
+            function calc()
+            {
+                var item1num, item2num, item3num, item4num, total1, total2, total3, total4, total, earnings;
+
+                item1num= parseInt(document.forms["myform"].elements["item1"].value);
+                item2num= parseInt(document.forms["myform"].elements["item2"].value);
+                item3num= parseInt(document.forms["myform"].elements["item3"].value);
+                item4num= parseInt(document.forms["myform"].elements["item4"].value);
+
+                document.getElementById("item1num").value = item1num;
+                document.getElementById("item2num").value = item2num;
+                document.getElementById("item3num").value = item3num;
+                document.getElementById("item4num").value = item4num;
+
+                total1= parseFloat(item1num*20.99);
+                total2= parseFloat(item2num*12.75);
+                total3= parseFloat(item3num*9.95);
+                total4= parseFloat(item4num*35.89);
+
+                document.getElementById("total1").value = total1.toFixed(2);
+                document.getElementById("total2").value = total2.toFixed(2);
+                document.getElementById("total3").value = total3.toFixed(2);
+                document.getElementById("total4").value = total4.toFixed(2);
+
+                total= total1+total2+total3+total4;
+
+                document.getElementById("total").value = total.toFixed(2);
+
+                earnings= (.9*total)+250;
+
+                document.getElementById("earnings").value = earnings.toFixed(2);
+
+                
+            }
+
+            
+
+        </script>
+    </head>
+    <body>
+        <h1>Homework 3 Part 2</h1>
+        <ul>
+            <li><a href="CIS114HomeworkHome.html">Home</a></li>
+            <li><a href="hw3.html">Homework 3</a></li>
+            <li><a href="hw3pt1.html">Homework 3 Part 1</a></li>
+            <li><a href="hw3pt3.html">Homework 3 Part 3</a></li>
+        </ul>
+        <h2>Weeky Sales Numbers</h2><br>
+        <form name="myform" class="form">
+            <label for="name">Sales Person</label>
+            <input type="text" name="name" id="name"><br>
+<h3>Number of Items Sold</h3><br>
+            <label for="item1">Item 1</label>
+            <input type="number" name="item1" id="item1"><br>
+            <label for="item2">Item 2</label>
+            <input type="number" name="item2" id="item2"><br>
+            <label for="item3">Item 3</label>
+            <input type="number" name="item3" id="item3"><br>
+            <label for="item4">Item 4</label>
+            <input type="number" name="item4" id="item4"><br>
+            
+            <br><input type="button" onclick="calc()" value="Submit"><br>
+            <br><input type="reset" value="RESET">
+
+            <table>
+                <tr>
+                  <th>Item Number</th>
+                  <th>Number Sold</th>
+                  <th>Price per Item</th>
+                  <th>Total per Item</th>
+                </tr>
+                <tr>
+                  <td>Item 1</td>
+                  <td><input type="number" name="item1num" id="item1num" readonly></td>
+                  <td><input type="text" id="price1" name="price1" value="$20.99" readonly></td>
+                  <td><input type="number" id="total1" name="total1"  readonly></td>
+                </tr>
+                <tr>
+                    <td>Item 2</td>
+                    <td><input type="number" name="item2num" id="item2num" readonly></td>
+                    <td><input type="text" id="price2" name="price2" value="$12.75" readonly></td>
+                    <td><input type="number" id="total2" name="total2"  readonly></td>
+                </tr>
+                <tr>
+                    <td>Item 3</td>
+                    <td><input type="number" name="item3num" id="item3num" readonly></td>
+                    <td><input type="text" id="price3" name="price3" value="$9.95" readonly></td>
+                    <td><input type="number" id="total3" name="total3"  readonly></td>
+                </tr>
+                <tr>
+                    <td>Item 4</td>
+                    <td><input type="number" name="item4num" id="item4num" readonly></td>
+                    <td><input type="text" id="price4" name="price4" value="$35.89" readonly></td>
+                    <td><input type="number" id="total4" name="total4" readonly></td>
+                </tr>
+              </table>
+              <br>
+              <label for="total">Total</label>
+              <input type="number" name="total" id="total"readonly><br>  <br>
+              <label for="earnings">Total Week's Earnings</label>
+            <input type="number" name="earnings" id="earnings" readony><br> 
+        </form>
+
+    </body>
+</html>

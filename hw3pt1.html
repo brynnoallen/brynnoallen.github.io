@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="This page contains homework assignments for San Mateo College JavaScript class">
+        <title>Homework 3 Part 1</title>
+        <style>
+            body {
+                font-family: courier;
+                background:lightgrey;
+                }
+    
+                .task {
+                background:white;
+                text-align:center;
+                width:100px;
+                height:25px;
+                margin:auto;
+                }
+                
+                ul {
+                list-style-type:none; 
+                margin:auto;
+                text-align: center;
+                }
+    
+                li {
+                display:inline;
+                margin: 5px;
+                padding: 5px;
+                }
+    
+                a:link, a:visited {
+                background:black;
+                color:white;
+                margin: auto;
+                padding: 5px;
+                }
+                a:hover, a:active {
+                background:green;
+                color:white;
+                margin: auto;
+                padding: 5px;
+                }
+                h1 {
+                color:green !important;
+                text-align:center;
+                }
+                h2 {
+                text-align:center;
+                }
+    
+                .home {
+                position:sticky;
+                }
+                
+                .form {
+                    margin:auto;
+                text-align: center; }
+    
+                .result {
+                background:white;
+                text-align:center;
+                width:700px;
+                height:200px;
+                margin:auto;
+                
+                }
+            </style>
+        <script>
+            function grade()
+            { 
+
+            var hwAvg, midExam, finalExam, parti, result, avgNum, midNum, finalNum, partiNum, GPA, letter, pass
+
+            hwAvg= document.forms["myform"].elements["hwAvg"].value;
+            midExam=document.forms["myform"].elements["midExam"].value;
+            finalExam= document.forms["myform"].elements["finalExam"].value;
+            parti= document.forms["myform"].elements["parti"].value;
+          
+
+            avgNum= parseInt(hwAvg);
+            midNum=parseInt(midExam);
+            finalNum= parseInt(finalExam);
+            partiNum= parseInt(parti);
+            
+
+            if (avgNum<0 || midNum<0 || finalNum<0 || partiNum<0 || 
+                avgNum>100 || midNum>100 || finalNum>100 || partiNum>100)
+                    {document.getElementById("result").innerHTML = 
+                    ("You have entered an invaled grade.  Please enter only numbers 0-100.")}
+
+                else {
+                    
+                GPA=parseInt((.5*avgNum)+(.2*finalNum)+(.2*midNum)+(.1*partiNum));
+
+                    if (GPA>90) {letter="A"};
+                    if (GPA>80 && GPA<90) {letter="B"};
+                    if (GPA>70 && GPA<80) {letter="C"};
+                    if (GPA>60 && GPA<70) {letter="D"};
+                    if (GPA<60) {letter="F"};
+
+                    if (GPA<69) {pass="The student will need to retake the course."} 
+                    else {pass= "The student has passed."};
+
+                    if(isNaN(GPA))
+                    {document.getElementById("result").innerHTML = 
+                    ("You have entered an invaled grade.  Please enter only numbers 0-100.")}
+                    else {
+
+                    document.getElementById("result").innerHTML = 
+                    ("The student's final grade is "+GPA+"%.  " +letter+"  "+pass+""); 
+
+                } } }
+        </script>
+    </head>
+    <body>
+        <h1>Homework 3 Part 1</h1>
+        <ul>
+            <li><a href="CIS114HomeworkHome.html">Home</a></li>
+            <li><a href="hw3.html">Homework 3</a></li>
+            <li><a href="hw3pt2.html">Homework 3 Part 2</a></li>
+            <li><a href="hw3pt3.html">Homework 3 Part 3</a></li>
+        </ul>
+        <h2>Student Grades</h2>
+        <form name="myform" class="form">
+            <label for="hwAvg">Homework Average</label><br>
+            <input type="number" name="hwAvg" id="hwAvg"><br>
+            <label for="midExam">Midterm Exam Score</label><br>
+            <input type="number" name="midExam" id="midExam"><br>
+            <label for="finalExam">Final Exam Score</label><br>
+            <input type="number" name="finalExam" id="finalExam"><br>
+            <label for="parti">Participation</label><br>
+            <input type="number" name="parti" id="parti"><br>
+            <br><input type="button" onclick="grade()" value="Submit"><br>
+            <br><input type="reset" value="RESET">
+        </form>
+        <br>
+        <div class="result">
+        <span id="result"></span>
+    </div>
+    </body>
+</html>
