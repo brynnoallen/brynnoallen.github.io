@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="This page contains homework assignments for San Mateo College JavaScript class">
+        <title>Homework 4 part 1</title>
+        <style>
+            body {
+                font-family: courier;
+                background:lightgrey;
+                }
+    
+                .task {
+                background:white;
+                text-align:center;
+                width:100px;
+                height:25px;
+                margin:auto;
+                }
+                
+                ul {
+                list-style-type:none; 
+                margin:auto;
+                text-align: center;
+                }
+    
+                li {
+                display:inline;
+                margin: 5px;
+                padding: 5px;
+                }
+    
+                a:link, a:visited {
+                background:black;
+                color:white;
+                margin: auto;
+                padding: 5px;
+                }
+                a:hover, a:active {
+                background:green;
+                color:white;
+                margin: auto;
+                padding: 5px;
+                }
+                h1 {
+                color:green !important;
+                text-align:center;
+                }
+                h2 {
+                text-align:center;
+                }
+    
+                .home {
+                position:sticky;
+                }
+                
+                .form {
+                    margin:auto;
+                text-align: center; }
+    
+                .results {
+                background:white;
+                text-align:center;
+                width:700px;
+                height:200px;
+                margin:auto;
+                
+                }
+         </style>
+        <script>
+
+           function A()
+            { 
+            var a, sumA, productA, sumAdone, productAdone;   
+            sumA=0
+            productA=1
+            for (let a=5; a<=25; a=a+4)
+            {sumA=sumA+a
+            productA=productA*a}
+            sumAdone=sumA.toLocaleString()
+            productAdone=productA.toLocaleString()
+            document.getElementById("resultA").innerHTML = 
+            ("1A: Calculate the product and sum of every fourth integer from 5 to 25. <br>The sum is " +sumAdone+ ". <br>The product is "+productAdone);
+            } 
+
+            function B()
+            {
+            var b, sumB, productB, sumBdone, productBdone;
+            sumB=0
+            productB=1
+            b=3
+            do {sumB=sumB+b; productB=productB*b; b=b+3}
+            while (b<=18);
+            sumBdone=sumB.toLocaleString();
+            productBdone=productB.toLocaleString(); 
+            document.getElementById("resultB").innerHTML = 
+            ("1B: Calculate the product and sum of every third integer from 3 to 18. <br>The sum is " +sumBdone+". <br>The product is "+productBdone);
+            }
+            
+
+        </script>
+    </head>
+    <body>
+        <h1>Homework 4 Part 1</h1>
+        <ul>
+            <li><a href="CIS114HomeworkHome.html">Home</a></li>
+            <li><a href="hw4.html">Homework 4</a></li>
+            <li><a href="hw4pt2.html">Homework 4 Part 2</a></li>
+            <li><a href="hw4pt3.html">Homework 4 Part 3</a></li>
+        </ul>
+        <br>
+        <h2>1A</h2>
+            <form name="myformA" class="form">
+                <br><input type="button" onclick="A()" value="CALCULATE 1A"><br>
+            </form>
+            <br> 
+            <div class="results">
+                    <span id="resultA">
+                    </span>
+            </div>  
+            <br>
+        <h2>1B</h2>
+            <form name="myformB" class="form">
+                <br><input type="button" onclick="B()" value="CALCULATE 1B"><br>
+            </form>
+            <br> 
+            <div class="results">
+                <span id="resultB">
+                </span>
+            </div>
+        </body>
+    </body>
+</html>
