@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="This page contains homework assignments for San Mateo College JavaScript class">
+        <title>Homework 5 Part 1</title>
+        
+        <script>
+            /*Create a webpage containing a form that displays an input text box, a group of radio buttons, a group of checkboxes, and select items 
+            (a drop-down or datalist element); along with a script that executes form validation.
+            Your script should validate whether the user has entered data in the input text box, has checked a radio button, has checked at least one
+            checkbox, and has selected an option from the list of options in the select (or datalist) element.
+            Use a submit button to invoke the validation script, so that the form is processed only when the form fields are ALL valid. If a field is 
+            invalid then display a message to the user.
+            In your form statement, use method="post" and an action that can be a mailto or a webpage (displaying that the form has been processed), 
+            but be sure to use input type="submit" for your submit button. Alternatively you can leave out the form's action and method, but then you 
+            should use an input type="button", along with displaying any appropriate messages. 
+            Make sure that if you display an error message because of a single field, you do not clear out the whole entire form unless all the fields 
+            would have error messages associated to them! It's horrible to have the user fill out all the form again when there was only one field with 
+            error, right? Remember about this type of detail that is related to user experience!*/
+
+            function validateForm() {
+		    let valid=true;
+            let name = document.forms["myform"]["name"].value;
+            if (name == "") {
+                window.open("hw5pt1false.html");
+                valid=false;
+                return false;
+                }
+                
+		    let table = document.forms["myform"]["table"].value;
+            if (table == "") {
+                window.open("hw5pt1false.html");
+			    valid=false;
+                return false;	
+                }
+
+		    let dinner = false;
+            if (document.getElementById("dinner1").checked) {
+                dinner=true;
+                }
+            else if (document.getElementById("dinner2").checked){
+                dinner=true;
+                }
+            else if (document.getElementById("dinner3").checked){
+                dinner=true;    
+                }
+  		    if(!dinner)  { window.open("hw5pt1false.html");
+		        valid=false;
+                return false;	
+                }
+
+            let alergy = false;
+            if (document.getElementById("alergy1").checked) {
+                alergy=true;
+                }
+            else if (document.getElementById("alergy2").checked){
+                alergy=true;
+                }
+            else if (document.getElementById("alergy3").checked){
+                alergy=true;    
+                }
+            else if (document.getElementById("alergy4").checked){
+                alergy=true;
+                }
+            else if (document.getElementById("alergy5").checked){
+                alergy=true;
+                }
+
+            if(!alergy)  { 
+                window.open("hw5pt1false.html");
+		        valid=false;
+                return false;
+                }
+                
+		    if(valid) { 
+                window.open("hw5pt1true.html");
+		
+ 
+                
+               
+            }
+        }
+            </script>
+
+    </head>
+
+
+
+    <body>
+
+        <h1>Homework 5</h1>
+
+        <ul>
+            <li><a href="CIS114HomeworkHome.html">Home</a></li>
+            <li><a href="hw5.html">Homework 5</a></li>
+            <li><a href="hw5pt2.html">Homework 5 Part 2</a></li>
+            <li><a href="hw5pt2.html">Homework 5 Part 3</a></li>
+        </ul>
+        <form name="myform" onsubmit="return validateForm()">
+            <h3>Dinner Party Questionaire</h3>
+            <label for="name">My name is</label><br>
+            <input type="textarea" id="name"></input>
+            <br>
+            <br>
+            <label for="table">I am at</label>
+            <select name="table" id="table">
+		<option value="">please select an option</option>
+                <option value="table1">table 1</option>
+                <option  value="table2">table 2</option>
+                <option  value="table3">table 3</option>
+            </select>
+            <br>
+            <br>
+            <fieldset>
+                <legend>I will have the</legend>
+                <input type="radio" id="dinner1" name="dinner" value="ChickenParm">
+                <label for="dinner1">Chicken Parmesan</label>
+                <input type="radio" id="dinner2" name="dinner" value="LemonSalmon">
+                <label for="dinner2">Lemon Salmon</label>
+                <input type="radio" id="dinner3" name="dinner" value="Pasta">
+                <label for="dinner3">Pasta Pomodoro</label>
+            </fieldset>
+            <br>
+            <br>
+            <fieldset>
+                <legend>My alergies include:</legend>
+                 <input type="checkbox" id="alergy1" value="shelfish"></input>
+                 <label for="alergy1">shelfish</label>
+                 <input type="checkbox" id="alergy2" value="gluten"></input >
+                 <label for="alergy2">gluten</label>
+                 <input type="checkbox"id="alergy3" value="milk"></input>
+                 <label for="alergy3">milk products</label>
+                 <input type="checkbox"id="alergy4" vaue="nuts"></input>
+                 <label for="alergy4">nuts</label>
+                 <input type="checkbox"id="alergy5" vaue="none"></input>
+                 <label for="alergy5">none</label>
+             </fieldset>
+             <br>
+             <br>
+             <input type="submit"></input>
+            
+            
+
+        </form>
+
+
+
+
+        <footer>
+        </footer>
+    </body>
+</html>
