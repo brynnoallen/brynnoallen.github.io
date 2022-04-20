@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="This page contains homework assignments for San Mateo College JavaScript class">
+        <title>Homework 5</title>
+        <style>
+            body {
+                font-family: courier;
+                background:lightgrey;
+                }
+    
+            .task {
+                background:white;
+                text-align:center;
+                width:500px;
+                height:50px;
+                margin:auto;
+                }
+                
+            ul {
+                list-style-type:none; 
+                margin:auto;
+                text-align: center;
+                }
+    
+            li {
+                display:inline;
+                margin: 5px;
+                padding: 5px;
+                }
+    
+            a:link, a:visited {
+                background:black;
+                color:white;
+                margin: auto;
+                padding: 5px;
+                }
+            a:hover, a:active {
+                background:green;
+                color:white;
+                margin: auto;
+                padding: 5px;
+                }
+            h1 {
+                color:green !important;
+                text-align:center;
+                }
+            h2 {
+                text-align:center;
+                }
+                
+            
+            
+         
+            table, tr, th, td {margin: auto; text-align:center; border: 2px solid green;}
+            table { border-collapse: collapse;}
+            tr:nth-child(even) { background-color: lightslategray;}
+        </style>
+        <script>
+            /*Create a 2nd webpage that contains a script that utilizes 2 pulldown menus. The first one should utilize an onchange
+             event handler. The second should utilize a button with an onclick event handler to navigate to a page after an option 
+             is selected. Each pulldown menu should include at least 3 URL destinations.  The website should open in another tab/window
+             so the user does not need to use the back button of the browser to go back to Part 2 page.*/
+
+            function navigate(myForm) {
+            let mydest = myForm.destList.options[myForm.destList.selectedIndex].value;
+            window.open (mydest);
+            }
+
+        
+
+        </script>
+    
+ 
+    </head>
+
+
+
+<body>
+
+<h1>Homework 5</h1>
+
+<ul>
+    <li><a href="CIS114HomeworkHome.html">Home</a></li>
+    <li><a href="hw5pt1.html">Homework 5 Part 1</a></li>
+    <li><a href="hw5pt2.html">Homework 5 Part 2</a></li>
+    <li><a href="hw5pt2.html">Homework 5 Part 3</a></li>
+</ul>
+<br>
+    <form name="myForm">
+        <select name="destList" onchange="navigate(this.form);">
+            <option>Here are some alternative browsers</option>
+            <option value="https://www.ecosia.org/">A browser that plants trees</option>
+            <option value="http://www.brave.com/">An open sourced browser</option>
+            <option value="http://www.epicbrowser.com/">A browser focused on privacy</option>
+            </select>
+    </form>
+    <br>
+    <form name="myForm">
+        <select name="destList">
+        <option value="CIS114HomeworkHome.html">Homework 1</option>
+        <option value="hw2.html">Homework 2</option>
+        <option value="hw3.html">Homework 3</option>
+        <option value="hw4.html">Homework 4</option>
+        </select>
+        <input type="button" value="Go" onclick="navigate(this.form);">
+    </form>
+
+<footer>
+</footer>
+</body>
+</html>
