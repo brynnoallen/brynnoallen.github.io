@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="This page contains homework assignments for San Mateo College JavaScript class">
+        <title>Homework 5</title>
+        <style>
+            body {
+                font-family: courier;
+                background:lightgrey;
+                }
+    
+            .task {
+                background:white;
+                text-align:center;
+                width:500px;
+                height:200px;
+                margin:auto;
+                }
+                
+            ul {
+                list-style-type:none; 
+                margin:auto;
+                text-align: center;
+                }
+    
+            li {
+                display:inline;
+                margin: 5px;
+                padding: 5px;
+                }
+    
+            a:link, a:visited {
+                background:black;
+                color:white;
+                margin: auto;
+                padding: 5px;
+                }
+            a:hover, a:active {
+                background:green;
+                color:white;
+                margin: auto;
+                padding: 5px;
+                }
+            h1 {
+                color:green !important;
+                text-align:center;
+                }
+            h2 {
+                text-align:center;
+                }
+                
+        </style>
+        <script>
+            function info(myForm) {
+                var a= myForm.stateList.options[myForm.stateList.selectedIndex].value;
+
+                let stateinfo= 
+                [["AL", "Alabama", "Montgomery", "4,903,185"],["AK", "Alaska", "Juneau", "731,545"], 
+                ["AZ", "Arizona", "Phoenix", "7,28,717"], ["AR", "Arkansas", "Little Rock", "3,017,825"],
+                ["CA", "California", "Sacramento", "39,512,223"], ["CO", "Colorado", "Denver","5,758,736"]];
+                
+                var output= 
+                "The state you selected was "+stateinfo[a][1]+ ". The abbreviation for this state is " +stateinfo[a][0]+
+                ". The capital of this state is " +stateinfo[a][2]+". The population of this state is " +stateinfo[a][3]+".";
+
+                document.getElementById("output").innerHTML = (output); 
+
+                }
+            
+        </script>
+    
+ 
+    </head>
+
+
+
+<body>
+
+<h1>Homework 5</h1>
+
+<ul>
+    <li><a href="CIS114HomeworkHome.html">Home</a></li>
+    <li><a href="hw5pt1.html">Homework 5 Part 1</a></li>
+    <li><a href="hw5pt2.html">Homework 5 Part 2</a></li>
+    <li><a href="hw5pt2.html">Homework 5 Part 3</a></li>
+</ul>
+<br>
+<form name="myForm">
+    <select name="stateList">
+    <option value="0">Alabama (AL)</option>
+    <option value="1">Alaska (AK)</option>
+    <option value="2">Arizona (AZ)</option>
+    <option value="3">Arkansas (AR)</option>
+    <option value="4">California (CA)</option>
+    <option value="5">Colorado (CO)</option>
+    </select>
+    <input type="button" value="Get state info" onclick="info(this.form);">
+</form>
+<br>
+<div class="task">
+    <span id="output"></span>
+</div>
+
+
+
+
+<footer>
+</footer>
+</body>
+</html>
