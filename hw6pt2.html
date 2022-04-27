@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="This page contains homework assignments for San Mateo College JavaScript class">
+        <title>Homework 6 Part 1</title>
+        <style>
+
+			body {
+			font-family: courier;
+			background:lightgrey;
+			}
+
+			.results {
+                
+                text-align:center;
+                
+                margin:auto;
+            }
+            ul {
+			list-style-type:none; 
+			margin:auto;
+            text-align: center;
+			}
+
+			li {
+			margin: 5px;
+			padding: 5px;
+			}
+			a:link, a:visited {
+			background:black;
+			color:white;
+			margin: auto;
+			padding: 5px;
+			}
+			a:hover, a:active {
+			background:green;
+			color:white;
+			margin: auto;
+			padding: 5px;
+			}
+			h1 {
+			color:green !important;
+			text-align:center;
+			}
+
+        </style>
+        <script>
+        /*Create a webpage that contains a script using a form that allows the user to input several lines of text and a search character and uses the String method charAt to determine the number of occurrences of the search character within the text. Use a form textarea for the text and a form input box for the search character.
+
+        If the search character is found within the text, display the number of occurrences of the search character in another input box or a textarea (of course, those should be disabled for users to type anything).
+
+        If the search character is not found within the text then display within a new window (using the window.open() method), the message, 'Search character not found in text string!' along with the search character - make sure that the output input box (or textarea) would be cleared if that error message is showing, meaning it would not show any previous result.
+
+        Your new window should be a width of 300 pixels, height of 100 pixels, and should not obscure any of the main content already on the page.
+
+        Remember that it does not matter if the user types a lowercase letter to search - the match should be done and accepted if the text contains the same letter either in lowercase or uppercase - letter "t" would be found twice in this text "This time"!
+
+        For a tip on how to use the charAt() to count the number of occurrences of a character, take a look at example using charAt() (Links to an external site.) - the only detail is that you should present the count of occurrences in another box and not in the same box where the user typed the sentence!*/
+
+            function search() {
+                var count=0;
+                var char= document.getElementById("char").value.toLowerCase().charAt(0);
+                var text=document.getElementById("text").value.toLowerCase()
+                
+
+                for(i=0; i< text.length; i++) {
+                    if(text.charAt(i) == char){
+                        count++}
+                }
+                if (count==0) {
+                    var noneWin= window.open("","", "left=300,top=500,width=300,height=100")
+                    noneWin.document.write("There are no instances of " +char+" found in your string.")
+                    document.getElementById("text").value=""
+                    document.getElementById("char").value=""
+                    }
+                  
+                else
+                 {document.getElementById("result").value=(+count+" instances of "+char+" found")}
+            }
+
+        </script>
+    </head>
+
+    <body>
+
+        <h1>Homework 6 Part 1</h1>
+        <ul>
+            <li><a href="hw6.html">HW 6</a></li>    
+            <li><a href="hw6pt1.html">Part 1</a></li>
+            <li><a href="CIS114HomeworkHome.html">Home</a></li>
+        </ul>
+        <br>
+        <form class="results">
+            <label for="text">Please enter in any number of lines</label><br>
+            <textarea id="text" rows="10" cols="50"></textarea><br><br>
+            <label for="char">Please enter a character</label><br>
+            <input type="text" id="char"><br><br>
+            <input type="button" value="SEARCH" onclick="search()">
+            <br>
+            <br>
+            <textarea id="result" rows="2" cols="50" readonly></textarea>
+        </form>
+        <footer>
+        </footer>
+    </body>
+</html>
