@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="This page contains homework assignments for San Mateo College JavaScript class">
+        <title>Homework 6 Part 1</title>
+        <style>
+
+			body {
+			font-family: courier;
+			background:lightgrey;
+			}
+
+			.results {
+                background:white;
+                text-align:center;
+                width:700px;
+                height:200px;
+                margin:auto;
+            }
+            ul {
+			list-style-type:none; 
+			margin:auto;
+            text-align: center;
+			}
+
+			li {
+			margin: 5px;
+			padding: 5px;
+			}
+			a:link, a:visited {
+			background:black;
+			color:white;
+			margin: auto;
+			padding: 5px;
+			}
+			a:hover, a:active {
+			background:green;
+			color:white;
+			margin: auto;
+			padding: 5px;
+			}
+			h1 {
+			color:green !important;
+			text-align:center;
+			}
+
+        </style>
+        <script>
+		/*Part 1: Create a webpage that contains a script that has a function that uses Math.round, Math.sqrt, Math.floor, 
+		toFixed() etc. to obtain the following:
+			a) round the floating-point number to the nearest integer Math.round(x)
+			b) calculate the square root of the floating-point number and round it to an integer Math.round(Math.sqrt(x))
+			c) round the floating-point number to the nearest tenths position Math.floor(x*10+.5)/10
+			d) round the floating-point number to the nearest hundredths position Math.floor(x*100+.5)/100
+			e) round the floating-point number to the nearest thousandths position Math.floor(x*1000+.5)/1000
+
+		Your page should require the user to enter a floating-point number with AT LEAST 4 decimal positions (no less than that). 
+		If the user types any number with less than 4 decimal positions, you should present an error message and do not present 
+		any result! Use regex to make sure that the number typed has at least 4 decimal positions!  /^\d*\.\d{4}$
+
+		Your script should display the original floating-point number the user typed, the number rounded to the nearest integer, 
+		the square root of the number that is then rounded to an integer, the number rounded to the nearest tenth, the number 
+		rounded to the nearest hundredth, and the number rounded to the nearest thousandth.
+
+		Be sure to use parseFloat() for the inputted number. Use a form input box that the user will use to input and a textarea 
+		to display the output. When presenting the output, make sure that there is no error message written 
+		- DO NOT PRESENT THE RESULT USING ALERT!!!
+
+		When displaying the output, depending on which method you chose, be sure to use toFixed() for displaying the number to 
+		the nearest tenths, hundredths, and thousandths positions (just in case you decided to use Math.floor and Math.round for 
+		some of the requests for this part). Validate the input and display an error message if the input is invalid. 
+		It is acceptable to use jQuery for this problem if you prefer.
+		*/
+
+			function myFunction(){ 
+			let x= parseFloat(document.getElementById("input").value);
+			var regex= /^\d*\.\d{4}$/;
+			if(!regex.test(x)) {
+            document.getElementById("results").innerHTML= "Please enter a number with 4 decimal places.";
+			}
+            if(regex.test(x))
+            {
+            let a= Math.round(x);
+			let b= Math.round(Math.sqrt(x));
+			let c= Math.floor(x*10+.5)/10;
+			let d= Math.floor(x*100+.5)/100;
+			let e= Math.floor(x*1000+.5)/1000;
+
+            let A= a.toFixed(0);
+            let B=b.toFixed(0);
+            let C= c.toFixed(1);
+            let D= d.toFixed(2);
+            let E= e.toFixed(3);
+
+			document.getElementById("results").innerHTML= "Your number rounded to the nearest integer is: "+A+
+			"<br> The square root of  your number rounded to the nearest integer is: "+B+ 
+			"<br> Your number rounded to the tenths position is: " +C+
+			"<br> Your number rounded to the hundredths position is: " +D+
+			"<br> Your number rounded to the thousandths position is: "+E+ " ";
+
+            }	
+        }
+
+
+        </script>
+    </head>
+
+    
+
+    <body>
+
+        <h1>Homework 6 Part 1</h1>
+        <ul>
+            <li><a href="hw6.html">HW 6</a></li>    
+            <li><a href="hw6pt2.html">Part 2</a></li>
+            <li><a href="CIS114HomeworkHome.html">Home</a></li>
+
+        </ul>
+        <br>
+        <form name="myForm" id="myForm">
+        <label for="input">Please input a number with four decimal places.</label><br>    
+        <input type="text" id="input">
+        <input type="button" value="Submit" onclick="myFunction()">
+        <br>
+        </form>
+        <div class="results">
+        <p id="results"></p>
+        </div>
+        <footer>
+        </footer>
+    </body>
+</html>
