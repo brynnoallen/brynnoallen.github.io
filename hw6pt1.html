@@ -75,9 +75,9 @@
 
 			function myFunction(){ 
 			let x= parseFloat(document.getElementById("input").value);
-			var regex= /^\d*\.\d{4}$/;
+			var regex= /^\d*\.\d{4,}$/;
 			if(!regex.test(x)) {
-            document.getElementById("results").innerHTML= "Please enter a number with 4 decimal places.";
+            document.getElementById("results").innerHTML= "Please enter a number with at least 4 decimal places.";
 			}
             if(regex.test(x))
             {
@@ -119,7 +119,7 @@
         </ul>
         <br>
         <form name="myForm" id="myForm">
-        <label for="input">Please input a number with four decimal places.</label><br>    
+        <label for="input">Please input a number with at least four decimal places.</label><br>    
         <input type="text" id="input">
         <input type="button" value="Submit" onclick="myFunction()">
         <br>
