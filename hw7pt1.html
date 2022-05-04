@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="This page contains homework assignments for San Mateo College JavaScript class">
+        <title>Homework 7 part 1</title>
+        <style>
+            .green{
+                background:lightgreen
+            }
+            .pink{
+                background:pink
+            }
+            .orange{
+                background:orange
+            }
+            .tahoma{
+                font-family: Tahoma
+            }
+            .courier{
+                font-family: Courier
+            }
+            .tnr{
+                font-family:'Times New Roman'
+                        }
+            .italic {
+                font-style:italic;
+            }
+            .bold{
+                font-weight: bold;
+            }
+            .underline{
+                text-decoration: underline;
+            }
+            .normal{
+                font-style:normal;
+                font-weight: 100;
+                text-decoration: none;
+            }
+
+        </style>
+    
+        <script>
+            /*
+            Create a webpage in which users are allowed to select a page layout and formatting through the use of the className property. Choose at least three form elements such as: radio buttons, select items, checkboxes, and buttons to allow the user to change some CSS property of the page - for example: a group of radio buttons for the user to select background color, a select item for the user to select font size or group of font family, a group of checkboxes where the user can select italic (font style), bold (font weight), etc.
+
+            Attention! Remember that certain styles cannot be applied at the same time! For example, it is not possible to offer a group of checkboxes for the user to select different font-sizes as you will not be able to apply all the choices the user can make with a group of checkboxes (in a group of checkboxes the user can select more than one option, right?). So, for this type of style, you could use a group of radio buttons (in a group of radio buttons, the user can only select one option, right?)
+
+            You should not ignore any of the choices made by the user which means that once a choice is made, it should remain active on the page or the area selected to apply the changes. The choice should be applied when the choice is made! For example, if you give radio buttons for the background color, such as: cyan, light green, or orange and the user chooses orange, the orange background should be applied immediately! Then, after that choice, if in another option you give checkboxes for the user to choose font bold, and/or font italic and the user selects both checkboxes, then the page should maintain the background color chosen from the radio button and apply the new styles (bold font and italicized font) as well, etc. 
+
+            In case of checkboxes, if the user uncheck the mark of a checkbox, the style that was unchecked should be removed from the page or area selected!*/
+
+            function background(){
+                let color= document.getElementsByName("color");
+                for (let radio of color) {
+                    if (radio.checked){
+                        poem.className= radio.value;
+                    }
+                } 
+            }
+
+            function font() {
+                var font = document.getElementById("font").value;
+                sonnet.className= font;
+            }
+
+
+            function myFunction() {
+                var effect=""
+                if(document.getElementById("italic").checked){
+                    effect+=" italic "
+                    lines.className+=" italic "
+                }
+                if(document.getElementById("bold").checked){
+                    effect+=" bold "
+                    lines.className+=" bold "
+                }
+                if(document.getElementById("underline").checked){
+                    effect+=" underlined"
+                    lines.className+=" underline "
+                }
+                else if(effect=""){
+                    lines.className="normal"
+                }
+                
+            }
+           
+		
+        
+   
+        </script>
+    </head>
+    <body>
+        <h1>Homework 7 Part 1</h1>
+        <ul>
+            <li><a href="hw7.html">HW 7</a></li>    
+            <li><a href="hw6pt2.html">Part 2</a></li>
+            <li><a href="CIS114HomeworkHome.html">Home</a></li>
+        </ul>
+        <br>
+        
+            <p>Pick a background color</p>
+            <input type="radio" id="green" name="color" value="green">
+            <label for="green">green</label>
+            <br>
+            <input type="radio" id="pink" name="color" value="pink">
+            <label for="pink">pink</label>
+            <br>
+            <input type="radio" id="orange" name="color" value="orange">
+            <label for="orange">orange</label>
+            <br>
+            <button onclick="background()">Submit</button>
+        
+        <br>
+        
+            Select your font:
+            <select id="font">
+              <option value="">---</option>
+              <option value="tahoma">Tahoma</option>
+              <option value="courier">Courier</option>
+              <option value="tnr">Times New Roman</option>
+              
+            </select>
+         
+          <button type="button" onclick="font()">Submit</button>
+        <br>
+        
+            <p>Please select a font effect</p>
+            <input type="checkbox" id="italic">
+            <label for="italic">Italics</label>
+            <br>
+            <input type="checkbox" id="bold">
+            <label for="bold">Bold</label>
+            <br>
+            <input type="checkbox" id="underline">
+            <label for="underline">Underline</label>
+            <br>
+            <button onclick="myFunction()">submit</button>
+        
+        
+        <fieldset id="poem">
+            <div id="sonnet">
+                <p id="lines">
+                Two households, both alike in dignity,<br>
+                In fair Verona, where we lay our scene,<br>
+                From ancient grudge break to new mutiny,<br>
+                Where civil blood makes civil hands unclean.<br>
+                From forth the fatal loins of these two foes<br>
+                A pair of star-cross'd lovers take their life;<br>
+                Whose misadventured piteous overthrows<br>
+                Do with their death bury their parents' strife.<br>
+                The fearful passage of their death-mark'd love,<br>
+                And the continuance of their parents' rage,<br>
+                Which, but their children's end, nought could remove,<br>
+                Is now the two hours' traffic of our stage;<br>
+                The which if you with patient ears attend,<br>
+                What here shall miss, our toil shall strive to mend.<br>
+            </p>
+            </div>
+        </fieldset>
+
+    </body>
+</html>
