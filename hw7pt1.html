@@ -79,8 +79,14 @@
                     effect+=" underlined"
                     lines.className+=" underline "
                 }
-                else if(effect=""){
-                    lines.className="normal"
+                if(!document.getElementById("italic").checked){
+                    lines.classList.remove("italic");
+                }
+                if(!document.getElementById("bold").checked){
+                    lines.classList.remove("bold");
+                }
+                if(!document.getElementById("underline").checked){
+                    lines.classList.remove("underline");
                 }
                 
             }
@@ -94,7 +100,7 @@
         <h1>Homework 7 Part 1</h1>
         <ul>
             <li><a href="hw7.html">HW 7</a></li>    
-            <li><a href="hw6pt2.html">Part 2</a></li>
+            <li><a href="hw7pt2.html">Part 2</a></li>
             <li><a href="CIS114HomeworkHome.html">Home</a></li>
         </ul>
         <br>

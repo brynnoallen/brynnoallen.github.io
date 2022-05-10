@@ -19,10 +19,12 @@
         Hello my name is <input type="text" id="name">, but you can call me <input type="text" id="nickname">
         <button onclick="setCookie()">Submit Info</button>
     </form>
+    <ul>
+        <li><a href="hw7.html">HW 7</a></li>    
+        <li><a href="hw7pt1.html">Part 1</a></li>
+        <li><a href="CIS114HomeworkHome.html">Home</a></li>
+    </ul>
         <script>
-            /*Write a script that will save two cookies for the same page - one for the name of the user and another one for the username of the user. Both cookies should be deleted when the user closes the browser.
-
-            If it is the first time the user is opening the page on the browser, you will present a form for the user to type his/her name and his/her username. If the user is revisiting the page while the browser is still opened, you will just display a message of Welcome Back followed by the name of the user that you will retrieve from the cookie previously saved.*/
 
             function setCookie(){
             document.cookie="name="+document.getElementById("name");
