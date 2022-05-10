@@ -34,7 +34,7 @@
             let userName=getCookie(name)
             let userNickname=getCookie(nickname)
             if (userName != "" + userNickname!= ""){
-                document.write="Hello "+userName+". May I call you "+userNickname+"?"
+                document.getElementById("results")="Hello "+userName+". May I call you "+userNickname+"?";
             }
         }
         function getCookie(input){
@@ -50,15 +50,7 @@
             }
        
             }
-        
-
-                    
-        
-                    
-            
-      
-        
-
 </script>
+<div id="results"></div>
     </body>
 </html>
